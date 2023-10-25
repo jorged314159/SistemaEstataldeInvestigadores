@@ -3,13 +3,21 @@ from django.db import models
 from usuarios.models import User, MUNICIPIOS
 from vinculacion.models import Categoria
 from administracion.validators import cp_validator
-
+from django.core.validators import FileExtensionValidator
+from investigadores.validators import limiteTamanioArchivo
 
 def rutaImagenEmpresa(instance, filename):
     extension = Path(filename).suffix
     return 'usuarios/empresas/empresa_{0}{1}'.format(
         instance.encargado.pk,
         extension)
+
+def rutaComprobanteEmpresa(instance, filename):
+    extension = Path(filename).suffix
+    return 'usuarios/empresas/comprobante/{0}{1}'.format(
+        instance.encargado.pk,
+        extension
+    )
 
 
 # Create your models here.
@@ -37,6 +45,14 @@ class Empresa(models.Model):
         blank=True,
         null=True,
         default=None)
+    comprobante = models.FileField(
+        upload_to=rutaComprobanteEmpresa,
+        verbose_name="Oficio de comprobación de la empresa",
+        blank=True,
+        null=True,
+        default=None,
+        validators=[FileExtensionValidator( ['pdf'] ), limiteTamanioArchivo]
+    )
 
     def __str__(self):
         return self.nombre_empresa

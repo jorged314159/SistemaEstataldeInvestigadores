@@ -45,6 +45,7 @@ class FormEmpresa(forms.ModelForm):
             'Ingresa una breve descripción de la empresa')
         self.fields["imagen"].widget.attrs['class'] = (
             'form-control')
+        self.fields["comprobante"].widget.attrs['class'] = ('form-control')
 
 
 class FormEmpresaUpdate(forms.ModelForm):
@@ -85,3 +86,4 @@ class FormEmpresaUpdate(forms.ModelForm):
             'Ingresa una breve descripción de la empresa')
         self.fields["imagen"].widget.attrs['class'] = (
             'form-control')
+        self.fields["comprobante"].widget.attrs['class'] = ('form-control')
