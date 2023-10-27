@@ -41,7 +41,7 @@ class Empresa(models.Model):
         max_length=1000,
         default="")
     elementos = models.TextField(
-        verbose_name="Elementos con los que cuneta",
+        verbose_name="Elementos con los que cuenta",
         max_length=1000,
         default="")
     imagen = models.ImageField(
@@ -52,7 +52,7 @@ class Empresa(models.Model):
         default=None)
     comprobante = models.FileField(
         upload_to=rutaComprobanteEmpresa,
-        verbose_name="Oficio de comprobación de la empresa",
+        verbose_name="Oficio de comprobación",
         blank=True,
         null=True,
         default=None,
