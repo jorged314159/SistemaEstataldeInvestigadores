@@ -26,8 +26,9 @@ class Empresa(models.Model):
         User,
         on_delete=models.CASCADE,
         primary_key=True)
-    nombre_empresa = models.CharField(max_length=80)
-    especialidades = models.ManyToManyField(Categoria, blank=True)
+    nombre_empresa = models.CharField(max_length=80, verbose_name="Nombre")
+    especialidades = models.ManyToManyField(Categoria, blank=True, verbose_name="Area del conocimiento")
+    especialidad = models.CharField(max_length=255, default="")
     latitud = models.FloatField()
     longitud = models.FloatField()
     codigo_postal = models.CharField(max_length=5, validators=[cp_validator])
@@ -37,6 +38,10 @@ class Empresa(models.Model):
     numero_exterior = models.PositiveIntegerField()
     acerca_de = models.TextField(
         verbose_name="Acerca de",
+        max_length=1000,
+        default="")
+    elementos = models.TextField(
+        verbose_name="Elementos con los que cuneta",
         max_length=1000,
         default="")
     imagen = models.ImageField(
