@@ -273,6 +273,62 @@ class CategoriaA(models.Model):
         default=None,
         validators=[FileExtensionValidator( ['pdf']), limite10MbArchivo]
     )
+    b3 = models.FileField(
+        upload_to=rutaCategoriaB,
+        verbose_name="Evaluación de trabajos de investigación o proyectos.",
+        blank=True,
+        null=True,
+        default=None,
+        validators=[FileExtensionValidator( ['pdf']), limite10MbArchivo]
+    )
+    b5 = models.FileField(
+        upload_to=rutaCategoriaB,
+        verbose_name="Presentación de ponencias o carteles en eventos científicos, en México o el extranjero, de manera presencial o virtual y que en todos los casos sean aceptadas por un comité revisor.",
+        blank=True,
+        null=True,
+        default=None,
+        validators=[FileExtensionValidator( ['pdf']), limite10MbArchivo]
+    )
+    b6 = models.FileField(
+        upload_to=rutaCategoriaB,
+        verbose_name="Estancias de investigación en instituciones académicas o de investigación.",
+        blank=True,
+        null=True,
+        default=None,
+        validators=[FileExtensionValidator( ['pdf']), limite10MbArchivo]
+    )
+    b7 = models.FileField(
+        upload_to=rutaCategoriaB,
+        verbose_name="Asignaturas con créditos impartidas en Especialidad, Maestría o Doctorado de programas del SNP.",
+        blank=True,
+        null=True,
+        default=None,
+        validators=[FileExtensionValidator( ['pdf']), limite10MbArchivo]
+    )
+    b8 = models.FileField(
+        upload_to=rutaCategoriaB,
+        verbose_name="Participación en proyectos de investigación con financiamiento interno o externo bajo comprobante fiscal.",
+        blank=True,
+        null=True,
+        default=None,
+        validators=[FileExtensionValidator( ['pdf']), limite10MbArchivo]
+    )
+    b9 = models.FileField(
+        upload_to=rutaCategoriaB,
+        verbose_name="Publicación de artículos en revistas de divulgación científica o tecnológica arbitradas / participación en eventos de divulgación científica.",
+        blank=True,
+        null=True,
+        default=None,
+        validators=[FileExtensionValidator( ['pdf']), limite10MbArchivo]
+    )
+    b10 = models.FileField(
+        upload_to=rutaCategoriaB,
+        verbose_name="Evaluación de trabajos de investigación o proyectos.",
+        blank=True,
+        null=True,
+        default=None,
+        validators=[FileExtensionValidator( ['pdf']), limite10MbArchivo]
+    )
     estatus = models.CharField(
         choices= ESTADOS_PREMIOS,
         verbose_name="Estatus de la solicitud",

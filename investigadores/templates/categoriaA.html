@@ -12,11 +12,8 @@
   const c1 = "{{c1}}"
   const c2 = "{{c2}}"
 
-  if(curp){
-    const edad = curpToDate(curp)
-    if(edad >= 36) window.location.replace("{% url 'investigadores:error-edad' %}");
-  }
   if(c1 != 0 || c2 !=0) window.location.replace("{% url 'investigadores:solicitud-realizada' %}");
+  if(c1 != 0) window.location.replace("{% url 'investigadores:update-premios-categoria-a' c2 %}");
 
   function curpToDate(curp){
     var miCurp = curp.toUpperCase();
@@ -53,7 +50,7 @@
     <div class="card">
       <div class="card-header">
         <h5>{{titulo}}</h5>
-        <p><b>Nota: </b>Solo se permiten archivos en formato .PDF con un tamaño máximo de 10Mb</p>
+        <p><b>Nota: </b>Solo se permiten archivos en formato .PDF con un tamaño máximo de 5Mb</p>
       </div>
       <div class="card-body">
         <form method="POST" {% if formulario_archivos %}enctype="multipart/form-data"{% endif %}>

@@ -16,7 +16,6 @@
           <img src="{% static 'img/MEI.jpeg' %}" width="100px" class="card-img-top" alt="premio arbol y bonilla">
           <div class="card-body">
             <h5 class="card-title text-center">Producción Científica y Tecnológica.</h5>
-            <button data-bs-toggle="modal" data-bs-target="#modalPCT" class="btn btn-primary">Ver detalles.</button>
             <a href = "{% url 'investigadores:premios-categoria-a' %}" class="btn btn-primary">Participa.</a>
           </div>
         </div>
@@ -27,7 +26,6 @@
           <img src="{% static 'img/JAB.png' %}" width="100px" class="card-img-top" alt="premio arbol y bonilla">
           <div class="card-body center">
             <h5 class="card-title text-center">Superación Académica, Formación de Recursos Humanos y Otros.</h5>
-            <button data-bs-toggle="modal" data-bs-target="#modalJAB" class="btn btn-primary">Ver detalles.</button>
             <a href = "{% url 'investigadores:premios-categoria-b' %}" class="btn btn-primary">Participa.</a>
           </div>
         </div>
@@ -39,7 +37,6 @@
             <img src="{% static 'img/JAB.png' %}" width="100px" class="card-img-top" alt="premio arbol y bonilla">
             <div class="card-body center">
               <h5 class="card-title text-center">Superación Académica, Formación de Recursos Humanos y Otros.</h5>
-              <button data-bs-toggle="modal" data-bs-target="#modalJAB" class="btn btn-primary">Ver detalles.</button>
               <a href = "{% url 'investigadores:update-premios-categoria-b' CategoriaB.id%}" class="btn btn-primary">Actualiza tus datos.</a>
             </div>
           </div>
@@ -52,7 +49,6 @@
             <img src="{% static 'img/MEI.jpeg' %}" width="100px" class="card-img-top" alt="premio arbol y bonilla">
             <div class="card-body">
               <h5 class="card-title text-center">Producción Científica y Tecnológica.</h5>
-              <button data-bs-toggle="modal" data-bs-target="#modalPCT" class="btn btn-primary">Ver detalles.</button>
               <a href = "{% url 'investigadores:update-premios-categoria-a' CategoriaA.id%}" class="btn btn-primary">Actualiza tus datos.</a>
             </div>
           </div>

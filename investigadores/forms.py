@@ -229,6 +229,13 @@ class FormCategoriaA(forms.ModelForm):
         self.fields["a8"].widget.attrs['class'] = 'form-control'
         self.fields["a9"].widget.attrs['class'] = 'form-control'
         self.fields["a10"].widget.attrs['class'] = 'form-control'
+        self.fields["b3"].widget.attrs['class'] = 'form-control'
+        self.fields["b5"].widget.attrs['class'] = 'form-control'
+        self.fields["b6"].widget.attrs['class'] = 'form-control'
+        self.fields["b7"].widget.attrs['class'] = 'form-control'
+        self.fields["b8"].widget.attrs['class'] = 'form-control'
+        self.fields["b9"].widget.attrs['class'] = 'form-control'
+        self.fields["b10"].widget.attrs['class'] = 'form-control'
 
 class FormCategoriaB(forms.ModelForm):
     class Meta:

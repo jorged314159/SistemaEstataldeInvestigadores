@@ -87,7 +87,7 @@ class SolicitudCategoriaA(LoginRequiredMixin, CreateView):
     template_name = "categoriaA.html"
     extra_context = {
         "formulario_archivos": True,
-        "titulo": "Categoria A: Producción Científica y Tecnológica.",
+        "titulo": "Premio Estatal de Ciencia, Tecnología e Innovación.",
     }
 
     def get_context_data(self, **kwargs):
@@ -95,7 +95,8 @@ class SolicitudCategoriaA(LoginRequiredMixin, CreateView):
         userid = self.request.user.id
         
         context["c1"] = CategoriaA.objects.filter(user_id = userid, anio=datetime.datetime.today().year).count()
-        context["c2"] = CategoriaB.objects.filter(user_id = userid, anio=datetime.datetime.today().year).count()
+        CatA = CategoriaA.objects.filter(user_id = userid, anio=datetime.datetime.today().year).first()
+        context["c2"] = CatA.pk;
         return context
 
     def form_valid(self, form):
