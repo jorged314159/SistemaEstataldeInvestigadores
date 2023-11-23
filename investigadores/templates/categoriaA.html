@@ -13,7 +13,6 @@
   const c2 = "{{c2}}"
 
   if(c1 != 0 || c2 !=0) window.location.replace("{% url 'investigadores:solicitud-realizada' %}");
-  if(c1 != 0) window.location.replace("{% url 'investigadores:update-premios-categoria-a' c2 %}");
 
   function curpToDate(curp){
     var miCurp = curp.toUpperCase();
