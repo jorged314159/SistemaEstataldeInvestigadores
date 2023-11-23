@@ -334,7 +334,7 @@ class CategoriaB(models.Model):
     )
     b6 = models.FileField(
         upload_to=rutaCategoriaB,
-        verbose_name="Presentación de ponencias o carteles en eventos científicos, en México o el extranjero, de manera presencial o virtual y que en todos los casos sean aceptadas por un comité revisor.",
+        verbose_name="Estancias de investigación en instituciones académicas o de investigación.",
         blank=True,
         null=True,
         default=None,
