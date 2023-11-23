@@ -233,13 +233,10 @@ class FormCategoriaA(forms.ModelForm):
 class FormCategoriaB(forms.ModelForm):
     class Meta:
         model = CategoriaB
-        exclude = ["estatus", "user", "anio"]
+        exclude = ["estatus", "user", "anio", "b1", "b2", "b4"]
     def __init__(self, *args, **kwargs):
         super(FormCategoriaB, self).__init__(*args, **kwargs)
-        self.fields["b1"].widget.attrs['class'] = 'form-control'
-        self.fields["b2"].widget.attrs['class'] = 'form-control'
         self.fields["b3"].widget.attrs['class'] = 'form-control'
-        self.fields["b4"].widget.attrs['class'] = 'form-control'
         self.fields["b5"].widget.attrs['class'] = 'form-control'
         self.fields["b6"].widget.attrs['class'] = 'form-control'
         self.fields["b7"].widget.attrs['class'] = 'form-control'
