@@ -50,6 +50,10 @@ urlpatterns = [
     path('investigadores/<int:investigador_id>/constancia',
          views.constancia_sei,
          name="constancia_sei"),
+    path('investigadores/premio-estatal-cyt',
+         views.premio_estatal_cyt,
+        name="premio-estatal-cyt"
+    ),
     path(
         'investigadores/premios/categoria-a',
         views.SolicitudCategoriaA.as_view(),

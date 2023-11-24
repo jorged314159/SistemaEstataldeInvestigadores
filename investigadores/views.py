@@ -323,6 +323,16 @@ class EditarRevisionCatB(LoginRequiredMixin, UpdateView):
         return redirect(self.success_url)
 
 @login_required
+def premio_estatal_cyt(request):
+    userid = request.user.id
+    countCatA = CategoriaA.objects.filter(user_id = userid, anio=datetime.datetime.today().year).count()
+    if(countCatA == 0):
+        return redirect("investigadores:premios-categoria-a")
+    else:
+        catA = CategoriaA.objects.filter(user_id = userid, anio=datetime.datetime.today().year).first()
+        return redirect("investigadores:update-premios-categoria-a", catA.pk)
+
+@login_required
 def investigaciones_google(request):
     if request.method == "POST":
         investigador = get_object_or_404(Investigador, user=request.user)
