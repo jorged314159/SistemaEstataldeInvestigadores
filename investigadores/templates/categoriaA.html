@@ -10,9 +10,8 @@
   if(user_id != investigador) window.location.replace("{% url 'vinculacion:premios' %}");
 
   const c1 = "{{c1}}"
-  const c2 = "{{c2}}"
 
-  if(c1 != 0 || c2 !=0) window.location.replace("{% url 'investigadores:solicitud-realizada' %}");
+  if(c1 != 0 ) window.location.replace("{% url 'investigadores:solicitud-realizada' %}");
 
   function curpToDate(curp){
     var miCurp = curp.toUpperCase();
