@@ -328,11 +328,9 @@ def premio_estatal_cyt(request):
     if(countCatA == 0):
         return redirect("investigadores:premios-categoria-a")
     else:
-        try:
-            catA = CategoriaA.objects.filter(user_id = userid, anio=datetime.datetime.today().year).first()
-            return redirect("investigadores:update-premios-categoria-a", catA.pk)
-        except:
-            print("Error ocurred")
+        catA = CategoriaA.objects.filter(user_id = userid, anio=datetime.datetime.today().year).first()
+        return redirect("investigadores:update-premios-categoria-a", catA.pk)
+
 @login_required
 def investigaciones_google(request):
     if request.method == "POST":
