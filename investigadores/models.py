@@ -275,7 +275,7 @@ class CategoriaA(models.Model):
     )
     b3 = models.FileField(
         upload_to=rutaCategoriaB,
-        verbose_name="Evaluación de trabajos de investigación o proyectos.",
+        verbose_name="Dirección de Tesis o Artículo de Investigación de alumnos graduados en licenciatura, maestría, doctorado o especialidad médica.",
         blank=True,
         null=True,
         default=None,
