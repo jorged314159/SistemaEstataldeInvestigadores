@@ -324,12 +324,22 @@ class EditarRevisionCatB(LoginRequiredMixin, UpdateView):
 def premio_estatal_cyt(request):
     userid = request.user.id
     countCatA = CategoriaA.objects.filter(user_id = userid, anio=datetime.datetime.today().year).count()
-    print(countCatA)
-    if(countCatA == 0):
-        return redirect("investigadores:premios-categoria-a")
+
+    fechas = Premios.objects.first()
+    if not fechas:
+        messages.error(request, "Error, la convocatoria esta cerrada")
+        return redirect("vinculacion:perfil")
+    today = datetime.date.today()
+    if today >= fechas.fecha_inicio and today <= fechas.fecha_fin: 
+        print(countCatA)
+        if(countCatA == 0):
+            return redirect("investigadores:premios-categoria-a")
+        else:
+            catA = CategoriaA.objects.filter(user_id = userid, anio=datetime.datetime.today().year).first()
+            return redirect("investigadores:update-premios-categoria-a", catA.pk)
     else:
-        catA = CategoriaA.objects.filter(user_id = userid, anio=datetime.datetime.today().year).first()
-        return redirect("investigadores:update-premios-categoria-a", catA.pk)
+        messages.error(request, "Error, la convocatoria esta cerrada")
+        return redirect("vinculacion:perfil")
 
 @login_required
 def investigaciones_google(request):
