@@ -29,6 +29,9 @@ from investigadores.forms import (
     FormRevisorCatA,
     FormRevisorCatB
 )
+from administracion.models import(
+    Premios,
+)
 from vinculacion.helpers import (
     get_author,
     get_publications
