@@ -578,7 +578,7 @@ class RevisoresCatA(models.Model):
         null=False, blank=False,
         default="",
         )
-    b10 = models.PositiveBigIntegerField(default=0, verbose_name="Puntos extras.", validators=[MinValueValidator(0), MaxValueValidator(100)]),
+    extras = models.PositiveBigIntegerField(default=0, verbose_name="Puntos extras.", validators=[MinValueValidator(0), MaxValueValidator(100)]),
     downloadZipFile = models.BooleanField(default=False)
 
 class RevisoresCatB(models.Model):
